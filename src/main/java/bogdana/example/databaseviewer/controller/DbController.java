@@ -43,20 +43,22 @@ public class DbController {
         System.out.println(node.getName() + "   " + node.getType() + " " + node.getParentName());
 
         MyNode myNode = nodeService.parceNodeChildren(node);
+        List<MyNode> children = myNode.getChildren();
 
         MyNode root = tree.getRoot();
         MyNode rootBranch = root.findNodeById(node.getId());
-        rootBranch = myNode;
+        rootBranch.setChildren(children);
 
         System.out.println("structura");
         tree.printTree(root, " ");
-        List<MyNode> children = myNode.getChildren();
-        startNode.addChild(myNode);
+//        startNode.addChild(myNode);
 //        for (MyNode child: children) {
 //            System.out.println(child.getName() + " " + child.getId());
 //        }
 
         return new ResponseEntity<MyNode>(myNode, HttpStatus.CREATED);
+
+//        return new ResponseEntity<MyTree>(tree, HttpStatus.CREATED);
 
     }
 

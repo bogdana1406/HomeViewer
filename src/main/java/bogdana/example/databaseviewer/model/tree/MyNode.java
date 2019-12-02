@@ -106,6 +106,7 @@ public class MyNode {
         }
     }
 
+
     public MyNode getChild(String childName) {
         MyNode searchChild = null;
         for (MyNode child: children) {
@@ -145,6 +146,16 @@ public class MyNode {
         }
         return searchNode;
     }
+
+//    public MyNode changeChaild(MyNode chaild) {
+//        if (hasChildren()) {
+//            List<MyNode> children = getChildren();
+//            for (MyNode child: children) {
+//                //
+//            }
+//        }
+//
+//    }
 
     public List<String> getChildrenNames() {
         List<String> childrenNames = new ArrayList<>();
