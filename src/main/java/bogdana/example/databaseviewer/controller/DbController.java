@@ -56,7 +56,7 @@ public class DbController {
 //            System.out.println(child.getName() + " " + child.getId());
 //        }
 
-        return new ResponseEntity<MyNode>(myNode, HttpStatus.CREATED);
+        return new ResponseEntity<MyNode>(tree.getRoot(), HttpStatus.CREATED);
 
 //        return new ResponseEntity<MyTree>(tree, HttpStatus.CREATED);
 

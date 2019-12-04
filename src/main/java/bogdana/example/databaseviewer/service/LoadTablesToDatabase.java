@@ -28,6 +28,7 @@ public class LoadTablesToDatabase implements NodeRepository {
         DatabaseMetaData meta = conn.getMetaData();
         String[] types = { "TABLE" };
         String databaseName = parentNode.getParentName();
+        System.out.println("databaseName    " + databaseName);
 
         ResultSet resultSet = meta.getTables(databaseName, null, null, types);
         String tableName;

@@ -147,6 +147,21 @@ public class MyNode {
         return searchNode;
     }
 
+    public MyNode findNodeByType(String nodeType) {
+        MyNode searchNode = null;
+        if (nodeType.equals(this.getType())) {
+            return this;
+        }
+        List<MyNode> children = this.getChildren();
+        for (MyNode eachNode: children) {
+            MyNode nodeInTree = eachNode.findNodeByType(nodeType);
+            if (nodeInTree != null) {
+                searchNode = nodeInTree;
+            }
+        }
+        return searchNode;
+    }
+
 //    public MyNode changeChaild(MyNode chaild) {
 //        if (hasChildren()) {
 //            List<MyNode> children = getChildren();
